@@ -9,7 +9,8 @@ make_sure "SeriousThing.freakin_truthy?"
 no_way    "SeriousThing.is_freakin_false?"
 no_way    "SeriousThing.is_false?"
 
-#make_sure "SeriousThing.respond_to? :is_freakin_true?"
+make_sure "SeriousThing.respond_to? :is_freakin_true?"
+make_sure "SeriousThing.respond_to? :freakin_truthy?"
 
 ExpletiveInfixation.expletive_infix = 'gosh_darn'
 
