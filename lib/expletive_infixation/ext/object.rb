@@ -1,18 +1,11 @@
 class Object
+  INFIX_SUBSTITUTIONS = ['', '_'].freeze # such performance.
+
   def method_missing(meth, *args, &block)
-    if meth.to_s =~ ExpletiveInfixation.expletive_infix
-      new_methods = [
-        meth.to_s.gsub(ExpletiveInfixation.expletive_infix, '_'),
-        meth.to_s.gsub(ExpletiveInfixation.expletive_infix, '')
-      ]
+    infix = ExpletiveInfixation.expletive_infix
+    sub   = ->(s) { meth.to_s.gsub infix, s }
 
-      new_methods.each do |new_method|
-        if self.respond_to? new_method.to_sym
-          return self.send(new_method.to_sym, *args, &block)
-        end
-      end
-    end
-
-    super
+    infix =~ meth and m = INFIX_SUBSTITUTIONS.map(&sub).map(&:to_sym).find { |m| respond_to? m } or super
+    send m, *args, &block
   end
 end
