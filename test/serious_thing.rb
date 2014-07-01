@@ -1,5 +1,9 @@
 class SeriousThing
 
+  def self.truthy?
+    true
+  end
+
   def self.is_true?
     true
   end
