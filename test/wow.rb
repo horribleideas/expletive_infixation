@@ -6,7 +6,7 @@ def pass(message)
 end
 
 def fail(message)
-  puts_color ANSI_RED, "Damn, "+message
+  puts_color ANSI_RED, "Dang, "+message
 end
 
 def puts_color(color_code, message)
