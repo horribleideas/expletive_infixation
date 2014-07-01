@@ -49,6 +49,19 @@ a.each_with_gosh_darn_index do |n, i|
 end
 ```
 
+## Tests
+
+    $ ruby test/test_freakin_case.rb
+    Yep, SeriousThing.is_freakin_true?
+    Yep, SeriousThing.new.is_freakin_true?
+    Yep, SeriousThing.freakin_truthy?
+    Yep, SeriousThing.is_freakin_false? went 'undefined method `is_freakin_false?' for SeriousThing:Class'
+    Yep, SeriousThing.is_false? went 'undefined method `is_false?' for SeriousThing:Class'
+    Yep, SeriousThing.respond_to? :is_freakin_true?
+    Yep, SeriousThing.respond_to? :freakin_truthy?
+    Yep, SeriousThing.is_gosh_darn_true?
+    Yep, SeriousThing.is_freakin_true? went 'undefined method `is_freakin_true?' for SeriousThing:Class'
+
 ## Contributing
 
 1. Fork it ( https://github.com/horribleideas/expletive_infixation/fork )
